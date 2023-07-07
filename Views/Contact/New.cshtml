@@ -1,0 +1,27 @@
+@model ContactModel
+@{
+    ViewData["title"] = "New";
+}
+
+<div class="text-center">
+
+    <h1 class="display-4">Novo contato</h1>
+
+</div>
+
+<form asp-action="New">
+        <div class="mb-3">
+            <label asp-for="Name" class="form-label">Nome</label>
+            <input asp-for="Name" type="text" class="form-control">
+        </div>
+        <div class="mb-3">
+            <label asp-for="Email" class="form-label">Email</label>
+            <input asp-for="Email" type="email" class="form-control">
+        </div>
+        <div class="mb-3">
+            <label asp-for="Phone" class="form-label">Celular</label>
+            <input asp-for="Phone" type="text" class="form-control">
+        </div>
+        <button type="submit" class="btn btn-primary">Adicionar</button>
+        <a asp-controller="Contact" asp-action="Index" class="btn btn-secondary">Voltar</a>
+    </form>

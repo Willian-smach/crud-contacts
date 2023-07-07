@@ -1,0 +1,41 @@
+@model IEnumerable<ContactModel>
+@{
+    ViewData["Title"] = "Meus contatos";
+}
+
+<div class="text-center">
+    <div class="w-100 d-md-flex justify-content-end">
+        <a role="button" asp-controller="Contact" asp-action="New" class="btn btn-success"> Novo contato</a>
+    </div>
+    <h1 class="display-4">Meus contatos</h1>
+
+    <table class="table">
+    <thead>
+        <tr>
+        <th scope="col">Nome</th>
+        <th scope="col">Email</th>
+        <th scope="col">Celular</th>
+        <th scope="col"></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var item in Model)
+        {
+            <tr>
+                <th scope="row">1</th>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>@Html.DisplayFor(modelItem => item.Email)</td>
+                <td>@Html.DisplayFor(modelItem => item.Phone)</td>
+                <td>
+                    <div class="btn-group gap-2" role="group" aria-label="Basic mixed styles example">
+                        <a role="button" class="btn btn-warning" asp-controller="Contact" asp-action="Edit">Edit</a>
+                        <a role="button" class="btn btn-danger">Del</a>
+                    </div>
+                </td>
+            </tr>
+        }
+    </tbody>
+    </table>
+</div>
